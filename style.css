@@ -1,0 +1,1114 @@
+@import 'comentarios-secao.css';
+body {
+    font-family: 'Lora', serif;
+    scroll-padding-top: 100px;
+}
+
+h1, h3 { /* REMOVIDO H2 DAQUI */
+    font-family: 'Cormorant Garamond', serif;
+}
+/*inicio cabeçalho*/
+
+nav a {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: white; /* Garante que a cor padrão seja branca */
+    text-decoration: none; /* Remove sublinhado padrão */
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #caa64c; /* Dourado bonito no hover */
+    text-decoration: none; /* Garante que não volte o sublinhado */
+}
+
+nav a:hover {
+    color: #caa64c !important;
+    text-decoration: none;
+}
+nav a:last-child {
+    background-color: #caa64c !important;
+    color: #112c2e !important;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+nav a:last-child:hover {
+    background-color: #b89b3c !important;
+    color: white !important;
+}
+/*fim do cabeçalho*/
+
+/* Home */
+
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    background-color: #f9f9f9;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.hero-subtitle {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-benefits {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.hero-benefits li {
+    color: #444;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-benefits li i {
+    color: #caa64c;
+    margin-right: 10px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.primary-button {
+    background-color: #112c2e;
+    color: #caa64c;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: 2px solid #caa64c;
+    cursor: pointer;
+}
+
+.primary-button:hover {
+    background-color: #1b4d4f;
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: #caa64c;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 2px solid #caa64c;
+    cursor: pointer;
+}
+
+.secondary-button:hover {
+    background-color: #caa64c;
+    color: #112c2e;
+}
+
+.hero-image {
+    flex: 0.8;
+    text-align: right;
+    max-width: 29%;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-top: -20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade (Ajuste conforme necessário) */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 40px;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .hero-image {
+       display: none;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-benefits li {
+        font-size: 0.95rem;
+    }
+
+  
+}
+/* Fim do Home */
+
+/* Início do Sobre */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.imagem {
+    order: 1;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.imagem img {
+    width: 90%;
+    max-width: 380px; /* ou ajuste como quiser */
+    height: auto;
+    object-fit: contain; /* evita corte */
+    margin: 0 auto;
+    display: block;
+    border-radius: 25px; /* ou 0 se quiser sem borda arredondada */
+    padding: 10px;
+    background-color: #fff;
+}
+
+
+.texto {
+    flex: 1;
+    order: 2;
+}
+
+.texto .tag {
+    background-color: #fef1cd;
+    color: #caa64c;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.texto h2 {
+    font-size: 2.4rem;
+    color: #112c2e;
+    margin-bottom: 1.5rem;
+}
+
+.carousel-control-prev i,
+.carousel-control-next i {
+    font-size: 2rem;
+    color: #4e7b3d;
+    transition: color 0.3s;
+}
+
+.carousel-control-prev i:hover,
+.carousel-control-next i:hover {
+    color: #3d622f;
+}
+
+.small-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .imagem {
+        order: 2;
+        margin-top: -2rem;
+    }
+
+    .texto {
+        order: 1;
+        text-align: center;
+    }
+
+    .imagem img {
+        width: 320px;
+        height: 320px;
+        object-fit: contain;
+    }
+
+    .texto h2 {
+        font-size: 2rem;
+    }
+
+    .texto p {
+        font-size: 1.05rem;
+    }
+
+    .texto .tag {
+        font-size: 0.8rem;
+    }
+}
+
+/* Novo estilo para a seção de atendimento especializado para controlar o padding */
+.atendimento-especializado-section {
+    padding-top: 25px;
+    padding-bottom: 0px;
+}
+
+/* Ajuste no padding da seção dos cards */
+.section-topo {
+    padding-top: 0px;
+    padding-bottom: 10px;
+    background-color: #f7f8f7;
+}
+
+/* Estilos para o card flip */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Efeito flip ao passar o mouse */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.flip-card-front {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #cbe6cc;
+    padding: 20px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.card-content img {
+    max-width: 55% !important;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+}
+
+.card-content p {
+    font-weight: bold;
+    color: #4e7b3d;
+    font-size: 1.1rem !important;
+    margin: 20px;
+    line-height: 1.4;
+    margin-top: 20px !important;
+}
+
+.text-overlay {
+    margin-top: 10px;
+    background: none;
+    color: #4e7b3d;
+    font-size: 1rem;
+    font-weight: bold;
+    position: static;
+    padding: 0;
+}
+
+.flip-card-back {
+    background-color: #acebe6;
+    color: #4e7b3d;
+    transform: rotateY(180deg);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Escondendo o botão na frente */
+.flip-card-front .btn-whatsapp {
+    display: none;
+}
+
+/* Exibindo o botão no verso */
+.flip-card-back .btn-whatsapp {
+    display: inline-flex;
+    background-color: #25D366;
+    color: #fff;
+    font-size: 0.95rem;
+    border-radius: 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.flip-card-back h5 {
+    font-size: 1.2rem;
+    color: #4e7b3d;
+    font-weight: bold;
+}
+
+.flip-card-back p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Alterando a cor do botão ao passar o mouse */
+.flip-card-back .btn-whatsapp:hover {
+    background-color: #3d622f;
+    color: #fff;
+}
+
+/* Estilos do botão de WhatsApp */
+.btn-whatsapp i {
+    margin-right: 10px;
+}
+
+.row .col-md-4 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+/* Serviços */
+
+/* Estilo para título sobre a imagem */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 280px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.flip-card-front {
+    background-color: #cbe6cc;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(78, 123, 61, 0.85);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+.flip-card-back {
+    background-color: #bef1ed;
+    color: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.flip-card-back h5 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.flip-card-back p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.flip-card:nth-child(1) .flip-card-front .card-content img {
+    max-width: 65%;
+    height: auto;
+    object-fit: contain;
+}
+
+.flip-card:nth-child(1) .flip-card-front .card-content p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 35px;
+    text-align: center;
+    letter-spacing: 0.4px;
+}
+
+/* Cores para a frente dos cards */
+.card-consulta .flip-card-front {
+    background-color: #fff8e7;
+}
+
+.card-acompanhamento .flip-card-front {
+    background-color: #fff8e7;
+}
+
+.card-alinhamento .flip-card-front {
+    background-color: #fff8e7;
+}
+
+.card-reeducacao .flip-card-front {
+    background-color: #fff8e7;
+}
+
+.card-nutricao-inteligente .flip-card-front {
+    background-color: #fff8e7;
+}
+
+.card-mindful-eating .flip-card-front {
+    background-color: #fff8e7;
+}
+
+/* Opcional: Cores para o verso dos cards (você pode usar tons diferentes ou cores complementares) */
+.card-consulta .flip-card-back {
+    background-color: #b6eeb6;
+}
+
+.card-acompanhamento .flip-card-back {
+    background-color: #ffcc80;
+}
+
+.card-alinhamento .flip-card-back {
+    background-color: #eef09e;
+}
+
+.card-reeducacao .flip-card-back {
+    background-color: #fac3ff;
+}
+
+.card-nutricao-inteligente .flip-card-back {
+    background-color: #afeeee;
+}
+
+.card-mindful-eating .flip-card-back {
+    background-color: #e6e6d8;
+}
+
+/* Estilos aprimorados e específicos para os botões de WhatsApp nos cards */
+.flip-card-back .btn-whatsapp {
+    display: inline-flex !important;
+    margin-top: 35px;
+    background-color: #198754;
+    color: #fff;
+    border-radius: 6px;
+    padding: 10px 22px;
+    text-decoration: none;
+    font-weight: 600;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.flip-card-back .btn-whatsapp:hover {
+    background-color: #146c43;
+    color: #fff !important;
+    transform: translate(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2) !important;
+    border-color: #0056b3 !important;
+}
+
+.flip-card-back .btn-whatsapp i {
+    font-size: 1rem !important;
+    margin-right: 5px !important;
+    color: #e8f5e9 !important;
+}
+
+.flip-card-back .btn-whatsapp:hover i {
+    color: #fff !important;
+}
+
+.small-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+}
+
+.destaque-atendimento {
+    font-weight: bold !important;
+    font-size: 1rem !important;
+}
+.card-content p,
+.flip-card-back h5,
+.flip-card-back p {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+.card-content p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.flip-card-back h5 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #2e6043;
+}
+
+.flip-card-back p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #444;
+  text-align: center;
+  max-width: 90%;
+}
+/* Ajuste de altura só para os cards com texto mais longo */
+.card-alinhamento .flip-card,
+.card-mindful-eating .flip-card {
+  height: 300px;
+}
+
+.card-alinhamento .flip-card-inner,
+.card-mindful-eating .flip-card-inner,
+.card-alinhamento .flip-card-front,
+.card-mindful-eating .flip-card-front,
+.card-alinhamento .flip-card-back,
+.card-mindful-eating .flip-card-back {
+  height: 300px;
+}
+
+
+/*fim do serviço*/
+/* CORREÇÃO AQUI para os títulos das seções */
+/* Seções: Nossos Serviços, O que Nossos Pacientes Dizem, Entre em contato */
+#servicos h2,
+#depoimentos h2,
+#contato h2 {
+    font-family: 'Poppins', sans-serif; /* Usar Poppins como no seu header */
+    font-size: 2.5rem; /* Tamanho de título maior */
+    font-weight: 700; /* Bold */
+    color: #4e7b3d; /* Sua cor verde principal */
+    text-align: center;
+    margin-top: 80px; /* Mantém o espaçamento superior */
+    margin-bottom: 60px; /* Ajuste o espaçamento inferior */
+    letter-spacing: 0.8px;
+}
+
+/* Ajuste específico para o título "Compromisso com a sua Saúde e Bem-Estar!" */
+.titulo-compromisso {
+    font-size: 2.5rem !important; /* Aumentado um pouco mais para destaque */
+    font-family: 'Cormorant Garamond', serif; /* Mantém a fonte que você já definiu aqui */
+    font-weight: bold;
+    color: #4e7b3d;
+    margin-top: 20px; /* Ajuste se precisar de mais espaço */
+    margin-bottom: 20px; /* Ajuste se precisar de mais espaço */
+}
+
+
+/* Estilos para a seção de comentários */
+#comentarios .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out;
+}
+
+#comentarios .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#comentarios .card-body {
+    border-left: 5px solid #8fbc8f;
+}
+
+#comentarios .rounded-circle {
+    background-color: #d1e7dd !important;
+    color: #4e7b3d !important;
+}
+
+#comentarios .bi-person-fill {
+    font-size: 1.5rem;
+}
+
+#comentarios .fw-bold {
+    color: #3d622f !important;
+}
+
+#comentarios .card-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555 !important;
+}
+
+#comentarios .text-warning i {
+    margin-right: 3px;
+}
+
+/* Estilizando o título da seção de comentários - REPETIDO NO NOVO BLOCO ACIMA, PODE SER REMOVIDO DAQUI */
+/* #comentarios h2 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    color: #4e7b3d !important;
+    text-align: center !important;
+    margin-bottom: 60px !important;
+    letter-spacing: 0.8px !important;
+} */
+
+/* Estilos para a seção de comentários */
+#comentarios {
+    padding-top: 40px;
+    margin-top: 0;
+}
+
+/* Estilos para a seção de contato - Cores Elegantes e Suaves */
+#contato {
+    background-color: #f8f8f8;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* O H2 do contato foi movido para o bloco unificado de h2 das seções, pode remover daqui */
+/* #contato h2 {
+    color: #4a5568;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+} */
+
+#contato p {
+    color: #718096;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#contato .row > .col-md-6 {
+    display: flex;
+    flex-direction: column;
+}
+
+#contato .bg-success {
+    background-color: #e0f2e7 !important;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #c8e6c9;
+}
+
+#contato .bg-success h6 {
+    color: #388e3c;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#contato .bg-success i {
+    color: #388e3c;
+    margin-right: 10px;
+}
+
+#contato .bg-success .d-flex {
+    margin-bottom: 15px;
+}
+
+#contato .bg-success .small {
+    color: #66bb6a;
+    display: block;
+    margin-bottom: 15px;
+}
+
+#contato .bg-success .btn-light {
+    background-color: #fff !important;
+    color: #388e3c !important;
+    border-color: #388e3c !important;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: auto;
+}
+
+#contato .bg-success .btn-light:hover {
+    background-color: #e8f5e9 !important;
+    color: #388e3c !important;
+    border-color: #e8f5e9 !important;
+}
+
+#contato .bg-success h3 {
+    color: #388e3c;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#contato .form-control {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #d1d1d1;
+}
+
+#contato .form-label {
+    color: #4a5568;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+  .contato-titulo {
+    margin-top: -20px; /* ou até 0, se preferir */
+  }
+}
+
+/* Estilos para o Footer Moderno */
+.text-white {
+    color: #fff !important;
+}
+
+/* Estilos para o Footer Moderno e Compacto */
+.bg-dark {
+    background-color: #343a40 !important;
+}
+
+.text-muted {
+    color: #adb5bd !important;
+}
+
+footer a.text-white:hover {
+    color: black !important;
+}
+
+footer h6 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+footer p.small {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+footer .bi {
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+footer .bi:hover {
+    color: #ccc;
+}
+
+footer .py-3 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff9e6 !important;
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+footer i.bi {
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+
+/* Responsividade melhorada */
+@media (max-width: 1024px) {
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    footer .container > div {
+        width: 100%;
+        max-width: 500px;
+        margin: 15px 0;
+        text-align: center !important;
+    }
+
+    footer img {
+        margin-left: 0 !important;
+        width: 180px;
+        height: auto;
+    }
+
+    footer nav {
+        align-items: center;
+    }
+
+    footer a {
+        display: inline-block;
+        margin: 5px 0;
+    }
+
+    footer iframe {
+        width: 100% !important;
+        height: 200px !important;
+    }
+}
+.ebook-section {
+  background-color: #fff;
+  padding: 50px 40px;
+  margin: 60px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(17, 44, 46, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 960px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.ebook-image {
+  flex-shrink: 0;
+  max-width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(17, 44, 46, 0.12);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.ebook-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.ebook-image:hover {
+  transform: scale(1.05);
+}
+
+.ebook-info {
+  flex-grow: 1;
+}
+
+.ebook-info h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0d3b33;
+  margin: 0 0 6px 0;
+}
+
+.ebook-info h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #112c2e;
+  margin-top: 0;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.ebook-info p {
+  color: #495057;
+  font-size: 16px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.ebook-info ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.ebook-info ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #334d4a;
+  font-weight: 500;
+}
+
+.ebook-info ul li::before {
+  content: "\2022";
+  color: #0d3b33;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.6em;
+  line-height: 1;
+}
+
+.download-button {
+  background-color: #0d3b33;
+  color: #fff;
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 17px;
+  transition: background-color 0.35s ease, box-shadow 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(13, 59, 51, 0.4);
+  cursor: pointer;
+}
+
+.download-button:hover,
+.download-button:focus {
+  background-color: #0a2a24;
+  box-shadow: 0 6px 20px rgba(10, 42, 36, 0.7);
+  outline: none;
+}
+
+.download-button i {
+  font-size: 1.4em;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .ebook-section {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .ebook-image {
+    max-width: 200px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(17, 44, 46, 0.15);
+  }
+
+  .ebook-info h2 {
+    font-size: 24px;
+  }
+
+  .ebook-info h3 {
+    font-size: 20px;
+  }
+
+  .ebook-info p,
+  .ebook-info ul li {
+    font-size: 15px;
+  }
+
+  .download-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

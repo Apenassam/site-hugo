@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Menu com Seções</title>
+  <style>
+    section {
+      display: none; /* Esconde todas por padrão */
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" onclick="mostrar('home')">Início</a> |
+    <a href="#" onclick="mostrar('sobre')">Sobre</a> |
+    <a href="#" onclick="mostrar('servicos')">Serviços</a>
+  </nav>
+
+  <section id="home" style="display: block;">
+    <h2>Home</h2>
+    <p>Bem-vindo à página inicial!</p>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre</h2>
+    <p>Informações sobre nós.</p>
+  </section>
+
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <p>Veja os serviços que oferecemos.</p>
+  </section>
+
+  <script>
+    function mostrar(secao) {
+      // Esconde todas as seções
+      document.querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none';
+      });
+      // Mostra a seção escolhida
+      document.getElementById(secao).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
