@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HW Nutri - Hugo Willian Oliveira de Sá</title>
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js" defer></script>
+
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+<header style="background-color: #112c2e; padding-top: 10px; padding-bottom: 10px; position: relative;" x-data="{ open: false }">
+
+    <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+           <a href="#inicio" aria-label="Voltar para o início">
+            <img src="imagens/logo7.png" alt="Logo Hugo" style="max-height: 115px; width: auto;">
+            </a>
+        </div>
+
+        <!-- Botão hambúrguer -->
+        <div class="md:hidden ml-auto">
+            <button @click="open = !open" class="text-yellow-300 focus:outline-none">
+                <!-- Ícone hambúrguer -->
+                <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <!-- Ícone X -->
+                <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menu desktop -->
+        <nav class="hidden md:flex items-center ml-auto space-x-6">
+            <a href="#inicio" class="text-white font-medium" style="font-size: 1.1rem;">Início</a>
+            <a href="#sobre" class="text-white font-medium" style="font-size: 1.1rem;">Sobre</a>
+            <a href="#servicos" class="text-white font-medium " style="font-size: 1.1rem;">Tratamentos</a>
+            <a href="#depoimentos" class="text-white font-medium" style="font-size: 1.1rem;">Depoimentos</a>
+             <a href="#ebook" class="text-white font-medium" style="font-size: 1.1rem;">E-book</a>
+            <a href="#contato"
+                class="bg-yellow-300 text-white px-5 py-2 rounded-full font-semibold hover:bg-yellow-400"
+                style="font-size: 1.1rem;">Contato</a>
+        </nav>
+    </div>
+
+    <!-- Menu mobile -->
+    <nav x-show="open" x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 -translate-y-5"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-5"
+        x-cloak
+        class="md:hidden flex flex-col items-center gap-4 py-6 px-4"
+        style="background-color: #112c2e; position: absolute; top: 100%; left: 0; width: 100%; z-index: 1000;">
+        
+        <a href="#inicio" class="block text-white border-b border-white w-full text-center py-2 text-lg">Início</a>
+        <a href="#sobre" class="block text-white border-b border-white w-full text-center py-2 text-lg">Sobre</a>
+        <a href="#servicos" class="block text-white border-b border-white w-full text-center py-2 text-lg">Tratamentos</a>
+        <a href="#depoimentos" class="block text-white border-b border-white w-full text-center py-2 text-lg">Depoimentos</a>
+        <a href="#ebook" class="block text-white border-b border-white w-full text-center py-2 text-lg">E-book</a>
+        <a href="#contato"
+            class="bg-yellow-300 text-white text-center w-full py-2 rounded-full font-semibold hover:bg-yellow-400 text-lg">Contato</a>
+    </nav>
+</header>
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v3.x.x/dist/cdn.min.js" defer></script>
+
+<!-- Seção Home -->
+<div class="hero-section" id="inicio">
+    <div class="hero-content" >
+        <h1 class="hero-title">Nutrição, uma nova forma de cuidar da sua saúde e bem-estar!</h1>
+        <p class="hero-description">Desperte o seu potencial máximo com uma abordagem integrativa e personalizada.</p>
+        <ul class="hero-benefits">
+            <li><i class="fas fa-check-circle"></i> Alcance o bem-estar físico e mental que você sempre desejou.</li>
+            <li><i class="fas fa-check-circle"></i> Descubra a nutrição como ferramenta para transformar sua saúde.</li>
+            <li><i class="fas fa-check-circle"></i> Libere-se de crenças limitantes e padrões negativos.</li>
+      
+        </ul>
+        <div class="hero-buttons">
+    <a href="#contato" class="primary-button">Entrar em contato</a>
+    <a href="#servicos" class="secondary-button">Conheça os tratamentos</a>
+</div>
+
+    </div>
+    <div class="hero-image">
+        <img src="imagens/HUGO-50.JPG" alt="Hugo Willian - Nutricionista">
+    </div>
+</div>
+
+   <!-- SOBRE -->
+<section class="sobre" id="sobre" style="margin-top: 35px;">
+  <div class="container">
+    <div class="flex-container" >
+     <div class="texto">
+  <span class="tag">Conheça Hugo Willian:</span>
+  <h2>Nutrição Integrada para Corpo e Mente</h2>
+  <p>
+    A abordagem é comprometida com a transformação completa e sustentável dos pacientes. Com sólida formação Nutricional, as especializações em Saude Mental e Produtividade, bem como Modulação do Microambiente Intestinal Humano, promovem estratégias no cuidado da saúde integrada, incluindo disbioses e bem-estar cognitivo. Neste sentido, Hugo Willian une conhecimento técnico a uma abordagem empática e profissional.
+  </p>
+  <p>
+    Sua jornada inclui formações nacionais e internacionais em desenvolvimento humano, autoconhecimento e equilíbrio emocional. Essa vivência multidisciplinar o capacita a enxergar além dos sintomas físicos e compreender o ser humano como um todo.
+  </p>
+  <p>
+    Para Hugo, saúde não se resume à balança, mas sim ao alinhamento entre corpo, mente e propósito. Ele acredita que é preciso identificar as causas emocionais, mentais e comportamentais que bloqueiam o progresso — e, a partir disso, construir mudanças consistentes e duradouras.
+  </p>
+  <p>
+
+  </p>
+  <p>
+    Se você busca uma transformação real que começa de dentro para fora e longevidade, Hugo Willian pode lhe apoiar nessa jornada.
+  </p>
+</div>
+
+      <div class="imagem">
+        
+        <img src="imagens/HUGO-58.JPG" alt="Hugo Willian" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bg-white text-center atendimento-especializado-section" style="margin-top: 70px;">
+  <div class="container">
+    <span class="text-uppercase fw-bold destaque-atendimento" style="color: #8fbc8f; background-color: #f0fff0; padding: 8px 15px; border-radius: 5px;">Atendimento Especializado</span>
+    <h2 class="fw-bold mb-3 mt-2 titulo-compromisso" style="color: #4e7b3d;">Compromisso com a sua Saúde e Bem-Estar!</h2>
+    <p class="lead mb-4" style="color: #555; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+      Estou empenhado em promover a saúde e o bem-estar dos meus pacientes, buscando aprimorar meus conhecimentos técnico-científicos para oferecer o melhor tratamento a você.
+    </p>
+  </div>
+</div>
+
+<section class="py-5 bg-white text-center section-topo" style="background-color: #f7f8f7; margin-top: -90px;">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card border-0 rounded-4 shadow-sm h-100" style="background-color: #fff;">
+          <div class="card-body text-center p-4">
+            <div class="mb-3">
+              <img src="imagens/receive.png" alt="" class="rounded-circle small-icon">
+            </div>
+            <h5 class="card-title fw-bold" style="color: #d4ac0d; ">Atendimento personalizado</h5>
+            <p class="card-text" style="color: #555; font-size: 0.95rem;">Nosso atendimento é personalizado, considerando as necessidades e objetivos de cada paciente, oferecendo um tratamento único e exclusivo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card border-0 rounded-4 shadow-sm h-100" style="background-color: #fff;">
+          <div class="card-body text-center p-4">
+            <div class="mb-3">
+              <img src="imagens/comfortable.png " alt="" class="rounded-circle small-icon">
+            </div>
+            <h5 class="card-title fw-bold" style="color: #8fbc8f;">Ambiente acolhedor</h5>
+            <p class="card-text" style="color: #555; font-size: 0.95rem;">Nossa clínica oferece um ambiente acolhedor e confortável, criando um espaço seguro e tranquilo para que o paciente possa se sentir à vontade durante o tratamento.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card border-0 rounded-4 shadow-sm h-100" style="background-color: #fff;">
+          <div class="card-body text-center p-4">
+            <div class="mb-3">
+              <img src="imagens/medal.png" alt="" class="rounded-circle small-icon">
+            </div>
+            <h5 class="card-title fw-bold" style="color: #daa520;">Visão Clínica e Multidisciplinar</h5>
+            <p class="card-text" style="color: #555; font-size: 0.95rem;">Solicitação e análise inteligente de exames clínicos ajudam a personalizar o cuidado individual. Então possíveis indicações multidisciplinares podem ser feitas para potencializar os resultados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Inicio serviços -->
+<section id="servicos" class="pt-5 pb-5" >
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5" style="color: #4e7b3d; margin-top: -100px;">Nossos Serviços</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: -50px;"> 
+      <div class="col">
+        <div class="flip-card card-consulta">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-content">
+                <img src="imagens/nutrition-plans.png" alt="Consulta Nutricional" >
+                <p>Consulta Nutricional</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h5>Consulta Nutricional</h5>
+              <p>Avaliação individual e plano alimentar personalizado, focado em suas metas de saúde e bem-estar.</p>
+              <a href="https://wa.me/92991460095?text=Olá, gostaria de saber mais sobre a Consulta Nutricional." class="btn-whatsapp" target="_blank">
+                <i class="bi bi-whatsapp"></i> Agendar Consulta
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="flip-card card-acompanhamento">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-content">
+                <img src="imagens/IMG-20250703-WA0006.jpg" alt="Acompanhamento Contínuo">
+                <p>Bioimpedância</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h5>Bioimpedância</h5>
+              <p>Exame preciso que avalia a composição corporal, incluindo percentual de gordura, massa muscular, água corporal e muito mais.</p>
+              <a href="https://wa.me/92991460095?text=Olá, gostaria de saber mais sobre o exame de Bioimpedância." class="btn-whatsapp" target="_blank">
+               <i class="bi bi-whatsapp"></i> Agendar Consulta
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="flip-card card-alinhamento">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-content">
+                <img src="imagens/IMG-20250703-WA0004.jpg" alt="Alinhamento Corpo e Mente">
+                <p>Alinhamento Corpo e Mente</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h5>Alinhamento Corpo e Mente</h5>
+              <p>Sessões que unem técnicas nutricionais e estratégias emocionais para alcançar equilíbrio total e bem-estar duradouro.</p>
+              <a href="https://wa.me/92991460095?text=Olá, gostaria de saber mais sobre o Alinhamento Corpo e Mente." class="btn-whatsapp" target="_blank">
+                <i class="bi bi-whatsapp"></i> Agendar Consulta
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="flip-card card-reeducacao">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-content">
+                <img src="imagens/balanced-diet.png" alt="Reeducação Alimentar">
+                <p>Reeducação Alimentar</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h5>Reeducação Alimentar</h5>
+              <p>Aprenda a fazer escolhas mais saudáveis no dia a dia, com equilíbrio e sem restrições radicais.</p>
+              <a href="https://wa.me/92991460095?text=Olá, gostaria de saber mais sobre a Reeducação Alimentar." class="btn-whatsapp" target="_blank">
+                <i class="bi bi-whatsapp"></i> Agendar Consulta
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="flip-card card-nutricao-inteligente">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-content">
+                <img src="imagens/diet (1).png" alt="Nutrição Inteligente">
+                <p>Nutrição Inteligente</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h5>Nutrição Inteligente</h5>
+              <p>Tenha orientação prática para comer bem mesmo com agenda cheia: foco em agilidade, equilíbrio e resultados reais.</p>
+              <a href="https://wa.me/92991460095?text=Olá, gostaria de saber mais sobre a Nutrição Inteligente." class="btn-whatsapp" target="_blank">
+                <i class="bi bi-whatsapp"></i> Agendar Consulta
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="flip-card card-mindful-eating">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-content">
+                <img src="imagens/Imagem do WhatsApp de 2025-07-03 à(s) 10.54.39_098f9c8b.jpg" alt="Mindful Eating e Consciência Alimentar">
+                <p>Mindful Eating e Consciência Alimentar</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h5>Mindful Eating e Consciência Alimentar</h5>
+              <p>Aprenda a se conectar com os sinais do seu corpo para melhorar a relação com a comida e evitar exageros emocionais.</p>
+              <a href="https://wa.me/92991460095?text=Olá, gostaria de saber mais sobre Mindful Eating e Consciência Alimentar." class="btn-whatsapp" target="_blank">
+                <i class="bi bi-whatsapp"></i> Agendar Consulta
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Seção comentario-->
+<section id="depoimentos" class="pt-5 pb-5 bg-light">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5" style="color: #4e7b3d; margin-top: -95px;">Resultados e Transformações Compartilhadas</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card border-0 rounded-4 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="bi bi-person-fill fs-4"></i>
+                            </div>
+                            <h6 class="ms-3 fw-bold mb-0" style="color: #555;">Talyta Sampaio</h6>
+                        </div>
+                        <p class="card-text" style="color: #666; font-size: 1rem;">"Minha experiência com o Hugo foi excelente! O plano alimentar personalizado realmente funcionou para mim e me senti muito acolhida durante todo o processo. Recomendo de olhos fechados!"</p>
+                        <div class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card border-0 rounded-4 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="bi bi-person-fill fs-4"></i>
+                            </div>
+                            <h6 class="ms-3 fw-bold mb-0" style="color: #555;">Joana Darc</h6>
+                        </div>
+                        <p class="card-text" style="color: #666; font-size: 1rem;">"O acompanhamento do Hugo vai além da nutrição. Ele realmente se importa com o bem-estar geral e me motivou muito a alcançar meus objetivos. Profissional incrível!"</p>
+                        <div class="text-warning">
+                          <div class="text-warning">
+                                              <i class="bi bi-star-fill"></i>
+                                              <i class="bi bi-star-fill"></i>
+                                              <i class="bi bi-star-fill"></i>
+                                              <i class="bi bi-star-fill"></i>
+                                              <i class="bi bi-star-fill"></i>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card border-0 rounded-4 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="bi bi-person-fill fs-4"></i>
+                            </div>
+                            <h6 class="ms-3 fw-bold mb-0" style="color: #555;">Matheus Oliveira</h6>
+                        </div>
+                        <p class="card-text" style="color: #666; font-size: 1rem;">"As dicas de mindful eating foram muito valiosas para mim. Aprendi a ter uma relação mais saudável com a comida e a escutar meu corpo. Super recomendo!"</p>
+                        <div class="text-warning">
+                           <div class="text-warning">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card border-0 rounded-4 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="bi bi-person-fill fs-4"></i>
+                            </div>
+                            <h6 class="ms-3 fw-bold mb-0" style="color: #555;">Nonato Pacheco</h6>
+                        </div>
+                        <p class="card-text" style="color: #666; font-size: 1rem;">"O Hugo é um profissional completo. Além do plano nutricional, o coaching financeiro me ajudou a organizar minhas finanças. Uma abordagem integrada que fez toda a diferença na minha vida!"</p>
+                        <div class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="ebook" class="ebook-section" aria-label="Seção do Ebook gratuito" >
+  <div class="ebook-image">
+    <img src="/imagens/capa ebbok.jpg" alt="Capa do E-book Guia prático para controlar a vontade de doces" />
+  </div>
+  <div class="ebook-info">
+    <h2>Baixe Nosso E-book Gratuito:</h2>
+    <h3>Guia prático para controlar a vontade de doces</h3>
+    <p>
+      Neste eBook exclusivo, você vai descobrir estratégias práticas e eficazes para controlar a vontade de doces, sem abrir mão do prazer de se alimentar bem. Com dicas nutricionais, orientações para melhorar sua saúde física e mental, além de insights para manter o equilíbrio financeiro no dia a dia, este guia completo do Hugo vai transformar sua relação com a alimentação. Aprenda a identificar os gatilhos da vontade de doces, substituições saudáveis e como manter a motivação para um estilo de vida mais equilibrado e feliz.
+    </p>
+    <ul>
+      <li>Aprenda técnicas práticas para controlar a vontade de doces sem sofrimento</li>
+      <li>Descubra substituições saudáveis que mantêm o sabor e ajudam na saúde</li>
+      <li>Evite o ciclo de compulsão alimentar que prejudica seu corpo e sua mente</li>
+    </ul>
+    <a href="/imagens/Capa para Ebook Receitas Saudáveis Para Diabéticos Moderno Verde.pdf" download class="download-button" role="button" aria-label="Baixar o ebook em PDF">
+      <i class="fas fa-book-open" aria-hidden="true"></i> Baixar Agora (PDF)
+    </a>
+  </div>
+</section>
+
+    
+
+ <section id="contato" class="pt-5 pb-5" >
+    <div class="container">
+        <h2 class="fw-bold text-center mb-4" style="color: #4e7b3d; margin-top: -50px;"> Entre em contato agora e agende uma consulta!</h2>
+     
+        <div class="row">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="bg-success text-white rounded p-4 mb-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-whatsapp fs-4 me-2"></i>
+                        <h6 class="mb-0 fw-bold">Atendimento online</h6>
+                    </div>
+                    <p class="mb-2 small">Entre em contato conosco via Whatsapp</p>
+                    <a href="https://wa.me/5592991460095?text=Ol%C3%A1%20Hugo!%20Gostaria%20de%20agendar%20uma%20consulta." class="btn btn-light btn-sm text-success fw-bold" target="_blank">Enviar Mensagem</a>
+                </div>
+
+                <div class="bg-success text-white rounded p-4 mb-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-telephone-fill fs-4 me-2"></i>
+                        <h6 class="mb-0 fw-bold">Telefone</h6>
+                    </div>
+                    <p class="mb-2 small">(92) 9914-0095</p>
+                    <a href="tel:+5592991140095" class="btn btn-light btn-sm text-success fw-bold">Ligar agora</a>
+                </div>
+
+                <div class="bg-success text-white rounded p-4 mb-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-envelope-fill fs-4 me-2"></i>
+                        <h6 class="mb-0 fw-bold">Email</h6>
+                    </div>
+                    <p class="mb-2 small">hwostw@gmail.com</p>
+                    <a href="mailto:hwostw@gmail.com" class="btn btn-light btn-sm text-success fw-bold">Enviar Email</a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bg-success text-white rounded p-4">
+                    <h3 class="fw-bold mb-3">Formulário de contato</h3>
+                    <form action="https://formsubmit.co/hwostw@gmail.com" method="POST">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Qual seu nome?" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Qual seu email?" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensagem" class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="mensagem" name="mensagem" rows="2" placeholder="Adicione aqui sua mensagem." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-light text-success fw-bold">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer estilo Hitomi / Hw Nutri -->
+<footer style="background-color: #112c2e; color: #e4bf86; padding: -15px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <div class="container" style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+    <!-- Logo e Redes Sociais -->
+<!-- Logo e Redes Sociais -->
+<div style="flex: 1 1 220px; min-width: 220px; margin-bottom: 20px; text-align: left;">
+  <a href="#inicio" aria-label="Voltar para o início">
+  <img src="imagens/logofooter.png" alt="Hw Nutri Logo" style="max-width: 250px; margin-bottom: 10px; margin-left: -100px;">
+  </a>
+
+  <!-- Subiu o texto das redes sociais -->
+  <p style="font-weight: 600; margin: 0 0 25px -5px;">Redes Sociais:</p>
+
+  <!-- Subiu os ícones também -->
+  <div style="margin-top: -15px;">
+    <a href="https://www.instagram.com/hwnutri/" target="_blank" style="color: #e4bf86; margin: 0 10px; font-size: 20px; text-decoration: none;">
+      <i class="bi bi-instagram"></i>
+    </a>
+    <a href="https://wa.me/5592991460095" target="_blank" style="color: #e4bf86; margin: 0 10px; font-size: 20px; text-decoration: none;">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </div>
+</div>
+
+
+    <!-- Menu -->
+    <div style="flex: 1 1 150px; min-width: 150px; margin-bottom: 20px; text-align: left;">
+      <p style="font-weight: 700; margin-bottom: 15px;">Site</p>
+      <nav style="display: flex; flex-direction: column; gap: 8px;">
+        <a href="#inicio" style="color: #e4bf86; text-decoration: none; font-weight: 500;">Início</a>
+        <a href="#sobre" style="color: #e4bf86; text-decoration: none; font-weight: 500;">Sobre</a>
+        <a href="#servicos" style="color: #e4bf86; text-decoration: none; font-weight: 500;">Tratamentos</a>
+        <a href="#depoimentos" style="color: #e4bf86; text-decoration: none; font-weight: 500;">depoimento</a>
+        <br>
+
+
+
+      </nav>
+    </div>
+
+  <!-- Contato e Localização -->
+<div style="flex: 1 1 300px; min-width: 300px; margin-bottom: 20px; text-align: left;">
+  <p style="font-weight: 700; margin-bottom: 15px;">Contato</p>
+
+  <p style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+    <i class="bi bi-geo-alt-fill" style="color: #e4bf86;"></i>
+    Consultório INSAN (Yroyak Mall). Av. Mário Ypiranga 1600 Loja 05. Adrianópolis
+  </p>
+
+  <p style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+    <i class="bi bi-telephone-fill" style="color: #e4bf86;"></i>
+    (92) 99146-0095
+  </p>
+
+  <p style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+    <i class="bi bi-envelope-fill" style="color: #e4bf86;"></i>
+    <a href="mailto:hwostw@gmail.com" style="color: #e4bf86; text-decoration: none;">hwostw@gmail.com</a>
+  </p>
+</div>
+
+
+<!-- Mapa -->
+<div style="flex: 1 1 300px; min-width: 80px; margin-bottom: 20px; text-align: left; max-width: 300px;">
+  <p style="font-weight: 700; margin-bottom: 10px;">Localização</p>
+  <iframe
+    src="https://www.google.com/maps?q=Yroyak+Mall+Manaus+Av.+M%C3%A1rio+Ypiranga+1600+Loja+05&output=embed"
+    width="100%"
+    height="180"
+    style="border: 0; border-radius: 6px;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+
+</footer>
+
+    <!-- Scripts Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v3.x.x/dist/cdn.min.js" defer></script>
+</body>
+
+</html>
